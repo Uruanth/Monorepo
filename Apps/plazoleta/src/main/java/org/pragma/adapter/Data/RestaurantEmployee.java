@@ -1,8 +1,10 @@
 package org.pragma.adapter.Data;
 
 import lombok.*;
+import org.pragma.adapter.data.User;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Restaurante_Empleado")
@@ -19,8 +21,11 @@ public class RestaurantEmployee {
     @ManyToOne
     @JoinColumn(name = "id_restaurante")
     private Restaurant restaurant;
-    @Column(name = "id_persona")
-    private Integer id_person;
+
+    @OneToMany
+    @JoinColumn(name = "id_persona")
+    private Set<User> user;
+    
     @Column(name = "field")
     private String field;
 
