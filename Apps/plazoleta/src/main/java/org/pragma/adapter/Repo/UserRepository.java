@@ -1,8 +1,0 @@
-package org.pragma.adapter.Repo;
-
-import org.pragma.adapter.Data.User;
-import org.springframework.data.repository.CrudRepository;
-
-public interface UserRepository extends CrudRepository<User, Integer> {
-
-}
