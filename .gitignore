@@ -24,7 +24,5 @@ hs_err_pid*
 replay_pid*
 
 
-.gradle/
+.gradle
 .idea
-.gradle/7.5.1/buildOutputCleanup/
-.gradle/buildOutputCleanup/
