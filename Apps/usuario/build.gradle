@@ -1,0 +1,7 @@
+group 'org.pragma'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    implementation project(':Monorepo-Domain')
+}
+

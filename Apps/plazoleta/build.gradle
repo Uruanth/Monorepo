@@ -1,0 +1,17 @@
+group 'org.pragma'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.32'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+}
+
+test {
+    useJUnitPlatform()
+}
