@@ -18,14 +18,14 @@ public class RestaurantEmployee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_restaurante")
-    private Restaurant restaurant;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_restaurante", referencedColumnName = "id_chef")
+    private Order order;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_persona")
-    private Set<User> user;
-    
+    private User user;
+
     @Column(name = "field")
     private String field;
 

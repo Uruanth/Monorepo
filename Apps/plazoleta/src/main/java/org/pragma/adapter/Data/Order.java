@@ -1,6 +1,7 @@
 package org.pragma.adapter.Data;
 
 import lombok.*;
+import org.pragma.adapter.data.User;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,16 +19,19 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "id_cliente")
-    private Integer id_client;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_cliente")
+    private User user_id;
     @Column(name = "fecha")
     private Date date;
     @Column(name = "estado")
     private String status;
     @Column(name = "id_chef")
     private Integer id_chef;
-    @Column(name = "id_restaurante")
-    private Integer id_restaurant;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_restaurante")
+    private Restaurant restaurant;
 
     @OneToMany(mappedBy = "order")
     Set<OrderDish> number;

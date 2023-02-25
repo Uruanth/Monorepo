@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -32,8 +31,8 @@ public class User {
     private String email;
     @Column(name = "clave")
     private String password;
-    @ManyToOne
-    @JoinColumn(name = "id_rol")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_rol", referencedColumnName = "id")
     private Rol roles;
 
 }

@@ -18,7 +18,6 @@ public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     @Column(name = "nombre")
     private String name;
 
