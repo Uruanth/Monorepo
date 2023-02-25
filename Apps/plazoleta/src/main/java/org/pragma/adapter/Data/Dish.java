@@ -20,14 +20,19 @@ public class Dish {
 
     @Column(name = "nombre")
     private String name;
-    @Column(name = "id_categoria")
-    private Integer id_category;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_categoria")
+    private Category category;
+
     @Column(name = "descripcion")
     private String description;
     @Column(name = "precio")
     private Float price;
-    @Column(name = "id_restaurante")
-    private Integer id_restaurant;
+
+    @ManyToOne
+    @JoinColumn(name = "id_restaurante")
+    private Restaurant restaurant;
     @Column(name = "url_imagen")
     private String url_image;
     @Column(name = "activo")
