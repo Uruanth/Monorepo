@@ -10,6 +10,9 @@
 #    username: root
 #    password: admin
 #    driver-class-name: "com.mysql.cj.jdbc.Driver"
+spring:
+  application:
+    name: api-usuarios
 server:
   port: 8081
 microservice:

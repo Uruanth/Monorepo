@@ -14,6 +14,10 @@ subprojects {
         testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
 
+        // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+        implementation 'org.slf4j:slf4j-api:2.0.6'
+
+
 
 //        Testing
         testImplementation "org.junit.jupiter:junit-jupiter-api:${junitPlatformVersion}"
