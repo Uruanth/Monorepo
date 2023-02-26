@@ -7,12 +7,16 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
         </processorPath>
+        <module name="Monorepo.Apps-gateway.main" />
         <module name="Monorepo.Monorepo-Domain.test" />
         <module name="Monorepo.Monorepo-Business.test" />
+        <module name="Monorepo.Apps-gateway.test" />
+        <module name="Monorepo.Apps-Generics.test" />
         <module name="Monorepo.Apps-plazoleta.test" />
         <module name="Monorepo.Apps-plazoleta.main" />
         <module name="Monorepo.Monorepo-Domain.main" />
         <module name="Monorepo.Monorepo-Business.main" />
+        <module name="Monorepo.Apps-Generics.main" />
         <module name="Monorepo.Apps-usuario.test" />
         <module name="Monorepo.Apps-usuario.main" />
       </profile>

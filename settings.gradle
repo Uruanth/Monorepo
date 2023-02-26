@@ -44,4 +44,6 @@ buildFiles.each { File buildFile ->
 //findProject(':Apps:plazoleta')?.name = 'plazoleta'
 //include 'Apps:usuario'
 //findProject(':Apps:usuario')?.name = 'usuario'
-
+//include 'Apps:Generics'
+//findProject(':Apps:Generics')?.name = 'Generics'
+//

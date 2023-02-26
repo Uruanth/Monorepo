@@ -3,6 +3,9 @@
 
 ## Tables DDL
 ~~~sql
+
+CREATE DATABASE pragma;
+USE pragma;
 -- pragma.categoria definition
 
 CREATE TABLE `categoria` (
