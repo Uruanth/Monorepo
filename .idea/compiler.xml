@@ -11,12 +11,12 @@
         <module name="Monorepo.Monorepo-Domain.test" />
         <module name="Monorepo.Monorepo-Business.test" />
         <module name="Monorepo.Apps-gateway.test" />
-        <module name="Monorepo.Apps-Generics.test" />
         <module name="Monorepo.Apps-plazoleta.test" />
         <module name="Monorepo.Apps-plazoleta.main" />
         <module name="Monorepo.Monorepo-Domain.main" />
         <module name="Monorepo.Monorepo-Business.main" />
-        <module name="Monorepo.Apps-Generics.main" />
+        <module name="Monorepo.Apps-generics.test" />
+        <module name="Monorepo.Apps-generics.main" />
         <module name="Monorepo.Apps-usuario.test" />
         <module name="Monorepo.Apps-usuario.main" />
       </profile>

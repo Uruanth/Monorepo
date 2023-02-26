@@ -9,8 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Apps/Generics" />
             <option value="$PROJECT_DIR$/Apps/gateway" />
+            <option value="$PROJECT_DIR$/Apps/generics" />
             <option value="$PROJECT_DIR$/Apps/plazoleta" />
             <option value="$PROJECT_DIR$/Apps/usuario" />
             <option value="$PROJECT_DIR$/Business" />
