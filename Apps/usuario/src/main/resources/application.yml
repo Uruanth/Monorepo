@@ -1,12 +1,20 @@
-spring:
-  jpa:
-#    hibernate.ddl-auto: update
-    hibernate.ddl-auto: create-drop
-    #    generate-ddl: true
-    show-sql: true
-    database-platform: "org.hibernate.dialect.MySQL5InnoDBDialect"
-  datasource:
+#spring:
+#  jpa:
+##    hibernate.ddl-auto: update
+#    hibernate.ddl-auto: create-drop
+#    #    generate-ddl: true
+#    show-sql: true
+#    database-platform: "org.hibernate.dialect.MySQL5InnoDBDialect"
+#  datasource:
+#    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/pragma}
+#    username: root
+#    password: admin
+#    driver-class-name: "com.mysql.cj.jdbc.Driver"
+server:
+  port: 8081
+microservice:
+  jdbc:
+    driverClassName: ${DriverClassName:com.mysql.cj.jdbc.Driver}
     url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/pragma}
-    username: root
-    password: admin
-    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    userName: ${UserSQL:root}
+    password: ${PassSQL:admin}
