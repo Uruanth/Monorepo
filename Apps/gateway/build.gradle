@@ -1,2 +1,6 @@
-group 'com.pragma'
-version '1.0-SNAPSHOT'
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    implementation 'org.springframework.cloud:spring-cloud-starter-gateway:3.1.4'
+    implementation 'com.auth0:java-jwt:4.3.0'
+    implementation 'com.auth0:jwks-rsa:0.22.0'
+}
