@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class Restaurant {
+public class RestaurantData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

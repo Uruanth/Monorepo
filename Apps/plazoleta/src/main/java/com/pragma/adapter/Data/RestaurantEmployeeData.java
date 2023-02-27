@@ -1,7 +1,7 @@
 package com.pragma.adapter.Data;
 
 import lombok.*;
-import com.pragma.adapter.data.User;
+import com.pragma.adapter.data.UserData;
 
 import javax.persistence.*;
 
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class RestaurantEmployee {
+public class RestaurantEmployeeData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +19,11 @@ public class RestaurantEmployee {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_restaurante", referencedColumnName = "id_chef")
-    private Order order;
+    private OrderData order;
 
     @ManyToOne
     @JoinColumn(name = "id_persona")
-    private User user;
+    private UserData user;
 
     @Column(name = "field")
     private String field;

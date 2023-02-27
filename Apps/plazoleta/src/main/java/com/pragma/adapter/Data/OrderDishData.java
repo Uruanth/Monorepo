@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class OrderDish {
+public class OrderDishData {
 
     @EmbeddedId
     OrderDishKey id;
@@ -18,12 +18,12 @@ public class OrderDish {
     @ManyToOne
     @MapsId("orderId")
     @JoinColumn(name = "id_orden")
-    private Order order;
+    private OrderData order;
 
     @ManyToOne
     @MapsId("dishId")
     @JoinColumn(name = "id_plato")
-    private Dish dish;
+    private DishData dish;
 
     @Column(name = "cantidad")
     private Integer number;

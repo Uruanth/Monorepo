@@ -13,11 +13,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class User {
+public class UserData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Column(name = "uuid", unique = true)
+    private String uuid;
 
     @Column(name = "nombre")
     private String name;
@@ -32,6 +35,6 @@ public class User {
     private String password;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_rol", referencedColumnName = "id")
-    private Rol roles;
+    private RolData roles;
 
 }

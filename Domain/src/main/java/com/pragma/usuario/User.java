@@ -6,8 +6,11 @@ import java.util.List;
 
 @Data
 @Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     private Integer id;
+    private String uuid;
     private String name;
     private String lastName;
     private String mobile;

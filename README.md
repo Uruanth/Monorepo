@@ -27,7 +27,7 @@ CREATE TABLE `roles` (
 -- pragma.usuarios definition
 
 CREATE TABLE `usuarios` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `correo` varchar(255) DEFAULT NULL,
   `apellido` varchar(255) DEFAULT NULL,
   `celular` varchar(255) DEFAULT NULL,
@@ -112,4 +112,18 @@ CREATE TABLE `restaurante_empleado` (
   CONSTRAINT `FK6krwcghq7bu374bcbh0lf7ppk` FOREIGN KEY (`id_restaurante`) REFERENCES `pedido` (`id_chef`),
   CONSTRAINT `FKd1hebib0qd98lt4w40ngs7aob` FOREIGN KEY (`id_persona`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- Roles
+
+INSERT INTO roles (id, descripcion ,nombre) VALUES (1,"ADMINISTRADOR", "is ADMINISTRADOR");
+INSERT INTO roles (id, descripcion ,nombre) VALUES (2,"PROPIETARIO", "is PROPIETARIO");
+INSERT INTO roles (id, descripcion ,nombre) VALUES (3,"EMPLOYEE", "is EMPLOYEE");
+INSERT INTO roles (id, descripcion ,nombre) VALUES (4,"CLIENTE", "is CLIENTE");
+
+-- Create user query
+INSERT INTO 
+	usuarios (id, correo, apellido, celular, nombre, clave, id_rol) 
+VALUES 
+	(1, "correo@test.com", "test L","123131231", "test N", "test P", 1);
 ~~~

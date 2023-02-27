@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class Dish {
+public class DishData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public class Dish {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_categoria")
-    private Category category;
+    private CategoryData category;
 
     @Column(name = "descripcion")
     private String description;
@@ -32,13 +32,13 @@ public class Dish {
 
     @ManyToOne
     @JoinColumn(name = "id_restaurante")
-    private Restaurant restaurant;
+    private RestaurantData restaurant;
     @Column(name = "url_imagen")
     private String url_image;
     @Column(name = "activo")
     private Boolean available;
 
     @OneToMany(mappedBy = "dish")
-    Set<OrderDish> number;
+    Set<OrderDishData> number;
 
 }

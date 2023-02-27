@@ -1,26 +1,10 @@
 
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-z
-JApps/usuario/src/main/java/com/pragma/adapter/config/SpringJdbcConfig.java,f\a\fa81e96936280d9c2b717c8f039f50d5689c9916
-?
-settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-I
-Apps/usuario/build.gradle,c\7\c7a52a8f0878c5ce7d3669344dd10b9592e72135
-K
-Apps/plazoleta/build.gradle,5\2\5204f0412762efa5f0ca84abb437711a15a191b4
 I
 Apps/gateway/build.gradle,8\2\829eaa40dc1fc57956b1afd38859008264a2dbc1
 e
 5Apps/gateway/src/main/java/com/pragma/GatewayApp.java,7\2\729dcba46f402b04a7fc1a075e09b957a0f74c3b
-l
-<Apps/usuario/src/main/java/com/pragma/handle/MainHandle.java,8\7\8703a5b9d7889f1a0812de456f7701a181bf81f9
 d
 4Apps/gateway/src/main/java/com/pragma/JWTFilter.java,0\a\0a262e413a6060d0ac1ee9c60f5ec7b1dc86f10e
-T
-$Apps/generics/src/main/java/Rol.java,4\7\470bab0a7d3d880da40f7b6a0f2369e9f8005ef4
-J
-Apps/generics/build.gradle,b\2\b235c727b2dc5bb3aec144f0a142d7de7a2c9cbd
 }
 MBusiness/src/main/java/com/pragma/usecases/admin/CreateRestaurantUseCase.java,a\3\a349a18fbe597ee144677dae3486211031057e7f
 x
@@ -47,8 +31,6 @@ v
 FBusiness/src/main/java/com/pragma/usecases/owner/MakeOrderUseCase.java,c\d\cd11750a6b0292270023e787cfa446e755099bb9
 x
 HBusiness/src/main/java/com/pragma/usecases/owner/CancelOrderUseCase.java,5\0\5098d6c4317d0916495e73ea88f7e919d7714b46
-`
-0Domain/src/main/java/com/pragma/usuario/Rol.java,b\c\bcca77d34071988b13b095b9ba85d0995af71d9e
 g
 7Domain/src/main/java/com/pragma/plazoleta/Category.java,1\2\12d54e334062ef0cbd6f2a8f097ccf934c3345ed
 c
@@ -57,17 +39,19 @@ d
 4Domain/src/main/java/com/pragma/plazoleta/Order.java,a\4\a4c613cd4a920458018b658097fa1ba3a6da86c6
 i
 9Domain/src/main/java/com/pragma/plazoleta/Restaurant.java,9\8\984d6d0e4590b46c5779de1feb4790f2b4075bde
-
-OBusiness/src/main/java/com/pragma/usecases/admin/CreateOwnerAccountUseCase.java,e\f\efb4bac2dcc132d1975752ae9586cf1f3914894a
-a
-1Domain/src/main/java/com/pragma/usuario/User.java,0\0\00dd6e4d6a39f617a869de318ed62079544ae951
-x
-HApps/usuario/src/main/java/com/pragma/adapter/config/JdbcProperties.java,1\2\12e467c45a8cbfbf5296fa3fd43034099f79c4ec
-h
-8Apps/usuario/src/main/java/com/pragma/UsuarioConfig.java,4\9\49c8ee12a5b2a921ee0e93197ecd941e2ecf2a65
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-E
-Business/build.gradle,6\5\65fc67ff1ecad86b54956e66da35fc57ab973595
 f
 6Business/src/main/java/com/pragma/generic/Usecase.java,d\0\d08cf9f721312d2bf402c2ff99fd6263cf5e175f
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+p
+@Apps/usuario/src/main/java/com/pragma/adapter/data/UserData.java,0\5\05d5a262ca9fadd27baa59e09c14cd67c69e6cc6
+o
+?Apps/usuario/src/main/java/com/pragma/adapter/data/RolData.java,6\3\635bff0bd9219fde7bab053e5ffae4e4cd133875
+`
+0Domain/src/main/java/com/pragma/usuario/Rol.java,b\c\bcca77d34071988b13b095b9ba85d0995af71d9e
+a
+1Domain/src/main/java/com/pragma/usuario/User.java,0\0\00dd6e4d6a39f617a869de318ed62079544ae951
+z
+JApps/usuario/src/main/java/com/pragma/adapter/IRepositories/IRepoUser.java,4\d\4d11194a4aa77fe2654cf2ac0669e1eb0e71add6

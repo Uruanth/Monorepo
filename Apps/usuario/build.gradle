@@ -3,6 +3,7 @@ version '1.0-SNAPSHOT'
 
 dependencies {
     implementation project(':Monorepo-Domain')
+    implementation project(':Apps-generics')
     implementation project(':Monorepo-Business')
     dependencies {
         implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"

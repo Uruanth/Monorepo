@@ -10,4 +10,5 @@ import org.springframework.context.annotation.FilterType;
         (type = FilterType.REGEX, pattern = ".*UseCase")
 )
 public class UsuarioConfig {
+
 }
