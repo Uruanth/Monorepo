@@ -7,6 +7,7 @@ import com.pragma.usuario.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -33,6 +34,25 @@ public class MainHandle {
 
         );
     }
+
+
+    @Bean
+    public RouterFunction<ServerResponse> helpyCreate(HelpUseCase usecase) {
+        return route(
+                RequestPredicates.POST("/helpy").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+                request -> usecase
+                        .apply(request.bodyToMono(String.class)
+                                .map(cadena -> new BCryptPasswordEncoder().encode(cadena)))
+//                        .then(ServerResponse.ok().build())
+                        .flatMap(s -> ServerResponse.ok()
+                                .contentType(MediaType.TEXT_PLAIN)
+                                .bodyValue(s))
+//                        .onErrorResume(errorHandler::badRequest)
+
+
+        );
+    }
+
 
     @Bean
     public RouterFunction<ServerResponse> createUser(CreateOwnerAccountUseCase useCase){

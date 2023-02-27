@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -48,19 +49,19 @@ public class IRepoUser implements UserRepo {
         log.info("se guardo -> " + result);
         UserData saveU = jdbc.query("SELECT * FROM usuarios WHERE uuid = '" + uuidNewUser + "'",
                         (rs, rowNum) -> {
-                            RolData rol = jdbc.query(
-                                            "SELECT * FROM roles WHERE id = " + rs.getInt("id_rol"),
-                                            (rs1, rowNum1) -> RolData.builder()
-                                                    .id(rs1.getInt("id"))
-                                                    .name(rs1.getString("nombre"))
-                                                    .description(rs1.getString("descripcion"))
-                                                    .build())
-                                    .get(0);
+//                            RolData rol = jdbc.query(
+//                                            "SELECT * FROM roles WHERE id = " + rs.getInt("id_rol"),
+//                                            (rs1, rowNum1) -> RolData.builder()
+//                                                    .id(rs1.getInt("id"))
+//                                                    .name(rs1.getString("nombre"))
+//                                                    .description(rs1.getString("descripcion"))
+//                                                    .build())
+//                                    .get(0);
 
                             return UserData.builder()
                                     .id(rs.getInt("id"))
                                     .uuid(rs.getString("uuid"))
-                                    .roles(rol)
+                                    .roles(RolData.builder().build())
                                     .name(rs.getString("nombre"))
                                     .email(rs.getString("correo"))
                                     .lastName(rs.getString("apellido"))
@@ -79,14 +80,15 @@ public class IRepoUser implements UserRepo {
                 .lastName(saveU.getLastName())
                 .mobile(saveU.getMobile())
                 .email(saveU.getEmail())
-                .roles(
-                        List.of(Rol.builder()
-                                .id(saveU.getRoles().getId())
-                                .name(saveU.getRoles().getName())
-                                .description(saveU.getRoles().getDescription())
-                                .build()
-                        )
-                )
+//                .roles(
+//                        List.of(Rol.builder()
+//                                .id(saveU.getRoles().getId())
+//                                .name(saveU.getRoles().getName())
+//                                .description(saveU.getRoles().getDescription())
+//                                .build()
+//                        )
+//                )
+                .roles(Collections.emptyList())
                 .build());
     }
 }

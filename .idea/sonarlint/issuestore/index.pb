@@ -37,18 +37,8 @@ i
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 f
 6Business/src/main/java/com/pragma/generic/Usecase.java,d\0\d08cf9f721312d2bf402c2ff99fd6263cf5e175f
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-o
-?Apps/usuario/src/main/java/com/pragma/adapter/data/RolData.java,6\3\635bff0bd9219fde7bab053e5ffae4e4cd133875
 `
 0Domain/src/main/java/com/pragma/usuario/Rol.java,b\c\bcca77d34071988b13b095b9ba85d0995af71d9e
-a
-1Domain/src/main/java/com/pragma/usuario/User.java,0\0\00dd6e4d6a39f617a869de318ed62079544ae951
-z
-JApps/usuario/src/main/java/com/pragma/adapter/IRepositories/IRepoUser.java,4\d\4d11194a4aa77fe2654cf2ac0669e1eb0e71add6
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-p
-@Apps/usuario/src/main/java/com/pragma/adapter/data/UserData.java,0\5\05d5a262ca9fadd27baa59e09c14cd67c69e6cc6
