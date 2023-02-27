@@ -32,6 +32,7 @@ public class WebSecurityConfig {
                 .and()
                 .authenticationManager(authManager)
                 .authorizeExchange()
+                .pathMatchers("/usuario/helpy").hasAuthority("ROLE_COM")
                 .anyExchange()
                 .authenticated()
                 .and()
@@ -71,18 +72,5 @@ public class WebSecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new PassEncoder();
     }
-
-//    @Bean
-//    public UsersService userService(){
-//        SecurityUser user = SecurityUser.builder()
-//                .id("3a21df6")
-//                .username("admin")
-//                .email("admin@admin.com")
-//                .password(passwordEncoder().encode("admin"))
-//                .build();
-//
-//        return new UsersService(user);
-//    }
-
 
 }

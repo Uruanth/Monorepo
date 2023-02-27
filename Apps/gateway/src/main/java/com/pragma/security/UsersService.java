@@ -24,7 +24,7 @@ public class UsersService {
                                 SecurityUser.builder()
                                         .id(rs.getInt("id"))
                                         .username(rs.getString("nombre"))
-                                        .rol("ROL_ADMIN")
+                                        .rol("COM")
                                         .email(rs.getString("correo"))
                                         .password(rs.getString("clave"))
                                         .build()
