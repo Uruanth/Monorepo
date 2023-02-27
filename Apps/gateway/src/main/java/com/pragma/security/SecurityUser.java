@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder(toBuilder = true)
 public class SecurityUser {
-    private String id;
+    private Integer id;
     private String username;
     private String password;
     private String email;
+    private String rol;
 }

@@ -22,3 +22,9 @@ spring:
             - RewritePath=/usuario/(?<segment>.*), /$\{segment}
 #            - JWTFilter=RSA256,HS256,RS256
 #            - RemoveResponseHeader=X-Powered-By
+microservice:
+  jdbc:
+    driverClassName: ${DriverClassName:com.mysql.cj.jdbc.Driver}
+    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/pragma}
+    userName: ${UserSQL:root}
+    password: ${PassSQL:admin}

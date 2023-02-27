@@ -1,18 +1,17 @@
 package com.pragma.handle;
 
 
+import com.pragma.defaultsBean.PassEncoder;
 import com.pragma.usecases.HelpUseCase;
 import com.pragma.usecases.admin.CreateOwnerAccountUseCase;
 import com.pragma.usuario.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import java.util.Map;
 
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
@@ -42,7 +41,8 @@ public class MainHandle {
                 RequestPredicates.POST("/helpy").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
                 request -> usecase
                         .apply(request.bodyToMono(String.class)
-                                .map(cadena -> new BCryptPasswordEncoder().encode(cadena)))
+                                .map(cadena -> new PassEncoder().encode(cadena))
+                                )
 //                        .then(ServerResponse.ok().build())
                         .flatMap(s -> ServerResponse.ok()
                                 .contentType(MediaType.TEXT_PLAIN)

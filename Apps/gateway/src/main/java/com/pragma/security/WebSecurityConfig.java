@@ -1,7 +1,10 @@
 package com.pragma.security;
 
+import com.pragma.defaultsBean.PassEncoder;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -15,14 +18,14 @@ import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 @Configuration
+@AllArgsConstructor
 public class WebSecurityConfig {
-
     @Bean
     public SecurityWebFilterChain filterChain(
             ServerHttpSecurity http,
             ReactiveAuthenticationManager authManager,
             CorsConfigurationSource corsSourse
-    ){
+    ) {
         return http.
                 csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .cors().configurationSource(corsSourse)
@@ -37,48 +40,49 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public CorsConfigurationSource corsConfigurationSource(){
+    public CorsConfigurationSource corsConfigurationSource() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration(
                 "/**",
                 new CorsConfiguration().applyPermitDefaultValues()
-                );
+        );
         return source;
     }
 
     @Bean
-    public ReactiveUserDetailsService userDetailsService(InMemoryUserService service){
-        return username -> service.findByUsername(username)
-                .map(user-> User.withUsername(user.getUsername())
+    public ReactiveUserDetailsService userDetailsService(UsersService service) {
+        return username -> service.findByEmail(username)
+                .map(user -> User.withUsername(user.getUsername())
                         .password(user.getPassword())
-                        .roles()
+                        .roles(user.getRol())
                         .build()
                 );
     }
 
     @Bean
     public ReactiveAuthenticationManager authManager(ReactiveUserDetailsService userDetailsService,
-                                                     PasswordEncoder passwordEncoder){
+                                                     PasswordEncoder passwordEncoder) {
         var authenticationManager = new UserDetailsRepositoryReactiveAuthenticationManager(userDetailsService);
-                authenticationManager.setPasswordEncoder(passwordEncoder);
-                return authenticationManager;
+        authenticationManager.setPasswordEncoder(passwordEncoder);
+        return authenticationManager;
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){ return  new BCryptPasswordEncoder();
+    public PasswordEncoder passwordEncoder() {
+        return new PassEncoder();
     }
 
-    @Bean
-    public InMemoryUserService userService(){
-        SecurityUser user = SecurityUser.builder()
-                .id("3a21df6")
-                .username("admin")
-                .email("admin@admin.com")
-                .password(passwordEncoder().encode("admin"))
-                .build();
-
-        return new InMemoryUserService(user);
-    }
+//    @Bean
+//    public UsersService userService(){
+//        SecurityUser user = SecurityUser.builder()
+//                .id("3a21df6")
+//                .username("admin")
+//                .email("admin@admin.com")
+//                .password(passwordEncoder().encode("admin"))
+//                .build();
+//
+//        return new UsersService(user);
+//    }
 
 
 }
