@@ -35,8 +35,6 @@ i
 9Domain/src/main/java/com/pragma/plazoleta/Restaurant.java,9\8\984d6d0e4590b46c5779de1feb4790f2b4075bde
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-f
-6Business/src/main/java/com/pragma/generic/Usecase.java,d\0\d08cf9f721312d2bf402c2ff99fd6263cf5e175f
 `
 0Domain/src/main/java/com/pragma/usuario/Rol.java,b\c\bcca77d34071988b13b095b9ba85d0995af71d9e
 :

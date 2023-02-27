@@ -43,7 +43,6 @@ public class MainHandle {
                         .apply(request.bodyToMono(String.class)
                                 .map(cadena -> new PassEncoder().encode(cadena))
                                 )
-//                        .then(ServerResponse.ok().build())
                         .flatMap(s -> ServerResponse.ok()
                                 .contentType(MediaType.TEXT_PLAIN)
                                 .bodyValue(s))
