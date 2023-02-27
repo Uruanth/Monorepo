@@ -1,10 +1,4 @@
 
-I
-Apps/gateway/build.gradle,8\2\829eaa40dc1fc57956b1afd38859008264a2dbc1
-e
-5Apps/gateway/src/main/java/com/pragma/GatewayApp.java,7\2\729dcba46f402b04a7fc1a075e09b957a0f74c3b
-d
-4Apps/gateway/src/main/java/com/pragma/JWTFilter.java,0\a\0a262e413a6060d0ac1ee9c60f5ec7b1dc86f10e
 }
 MBusiness/src/main/java/com/pragma/usecases/admin/CreateRestaurantUseCase.java,a\3\a349a18fbe597ee144677dae3486211031057e7f
 x
@@ -45,8 +39,6 @@ f
 6Business/src/main/java/com/pragma/generic/Usecase.java,d\0\d08cf9f721312d2bf402c2ff99fd6263cf5e175f
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-p
-@Apps/usuario/src/main/java/com/pragma/adapter/data/UserData.java,0\5\05d5a262ca9fadd27baa59e09c14cd67c69e6cc6
 o
 ?Apps/usuario/src/main/java/com/pragma/adapter/data/RolData.java,6\3\635bff0bd9219fde7bab053e5ffae4e4cd133875
 `
@@ -55,3 +47,8 @@ a
 1Domain/src/main/java/com/pragma/usuario/User.java,0\0\00dd6e4d6a39f617a869de318ed62079544ae951
 z
 JApps/usuario/src/main/java/com/pragma/adapter/IRepositories/IRepoUser.java,4\d\4d11194a4aa77fe2654cf2ac0669e1eb0e71add6
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+p
+@Apps/usuario/src/main/java/com/pragma/adapter/data/UserData.java,0\5\05d5a262ca9fadd27baa59e09c14cd67c69e6cc6
