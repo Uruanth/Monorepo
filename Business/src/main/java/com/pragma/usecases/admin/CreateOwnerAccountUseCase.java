@@ -13,7 +13,6 @@ public class CreateOwnerAccountUseCase extends Usecase<User, Mono<User>> {
 private final UserRepo repo;
     @Override
     public Mono<User> apply(User user) {
-      log.info("user" + user);
         return repo.saveUser(user);
     }
 }

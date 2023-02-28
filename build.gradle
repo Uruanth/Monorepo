@@ -1,10 +1,9 @@
-
-
 buildscript {
     ext {
         springBootVersion = '2.7.9'
         junitPlatformVersion = '5.8.1'
         lombokVersion = '1.18.26'
+        jacocoVersion = '0.8.8'
     }
 
     repositories {
@@ -13,6 +12,12 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
+}
+
+
+plugins {
+    id 'java'
+    id 'jacoco'
 }
 
 apply from: './main.gradle'

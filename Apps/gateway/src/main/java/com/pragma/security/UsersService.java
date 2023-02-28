@@ -30,11 +30,14 @@ public class UsersService {
                                         .build()
                 )
                 .get(0);
-
-        var asd = encoder.matches("admin", saveU.getPassword());
-        log.info("es valida "+asd);
-        log.info("usuario " + saveU.toString());
-        return Mono.just(saveU);
+        return Mono.just(saveU)
+                .onErrorReturn(SecurityUser.builder()
+                        .id(-1)
+                        .username("unauthorized")
+                        .rol("NONE")
+                        .email("unauthorized@unauthorized.un.u")
+                        .password("")
+                        .build());
     }
 
 }
