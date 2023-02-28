@@ -10,7 +10,6 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
     private Integer id;
-    private String uuid;
     private String name;
     private String lastName;
     private String mobile;

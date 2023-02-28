@@ -19,9 +19,6 @@ public class UserData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "uuid", unique = true)
-    private String uuid;
-
     @Column(name = "nombre")
     private String name;
 

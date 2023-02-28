@@ -33,8 +33,6 @@ d
 4Domain/src/main/java/com/pragma/plazoleta/Order.java,a\4\a4c613cd4a920458018b658097fa1ba3a6da86c6
 i
 9Domain/src/main/java/com/pragma/plazoleta/Restaurant.java,9\8\984d6d0e4590b46c5779de1feb4790f2b4075bde
-`
-0Domain/src/main/java/com/pragma/usuario/Rol.java,b\c\bcca77d34071988b13b095b9ba85d0995af71d9e
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -42,12 +40,6 @@ o
 ?Apps/usuario/src/main/java/com/pragma/adapter/data/RolData.java,6\3\635bff0bd9219fde7bab053e5ffae4e4cd133875
 h
 8Apps/usuario/src/main/java/com/pragma/UsuarioConfig.java,4\9\49c8ee12a5b2a921ee0e93197ecd941e2ecf2a65
-a
-1Domain/src/main/java/com/pragma/usuario/User.java,0\0\00dd6e4d6a39f617a869de318ed62079544ae951
-p
-@Apps/usuario/src/main/java/com/pragma/adapter/data/UserData.java,0\5\05d5a262ca9fadd27baa59e09c14cd67c69e6cc6
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 p
 @Apps/gateway/src/main/java/com/pragma/config/JdbcProperties.java,6\4\6450193c13afc4f9ecd19771e3ec6fc19302970a
 r
