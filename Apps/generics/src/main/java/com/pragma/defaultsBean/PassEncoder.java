@@ -14,7 +14,6 @@ public class PassEncoder implements PasswordEncoder {
 
     @Override
     public String encode(CharSequence rawPassword) {
-        log.info("ori -> " + rawPassword.toString());
         return Base64.getEncoder().encodeToString(rawPassword.toString().getBytes());
     }
 

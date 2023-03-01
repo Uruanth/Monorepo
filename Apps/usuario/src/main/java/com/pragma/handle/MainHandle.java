@@ -40,7 +40,8 @@ public class MainHandle {
     @Bean
     public RouterFunction<ServerResponse> helpyCreate(HelpUseCase usecase) {
         return route(
-                RequestPredicates.POST("/helpy").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+                RequestPredicates.POST("/helpy")
+                        .and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
                 request -> usecase
                         .apply(request.bodyToMono(String.class)
                                 .map(cadena -> new PassEncoder().encode(cadena))

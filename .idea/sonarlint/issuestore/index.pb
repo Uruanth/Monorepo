@@ -36,8 +36,6 @@ i
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-o
-?Apps/usuario/src/main/java/com/pragma/adapter/data/RolData.java,6\3\635bff0bd9219fde7bab053e5ffae4e4cd133875
 h
 8Apps/usuario/src/main/java/com/pragma/UsuarioConfig.java,4\9\49c8ee12a5b2a921ee0e93197ecd941e2ecf2a65
 p
@@ -48,10 +46,6 @@ d
 4Apps/gateway/src/main/java/com/pragma/JWTFilter.java,0\a\0a262e413a6060d0ac1ee9c60f5ec7b1dc86f10e
 p
 @Apps/gateway/src/main/java/com/pragma/security/SecurityUser.java,4\3\43ffb05ac7575779026bf5e63c20d17ee4a9ced2
-c
-3Apps/generics/src/main/java/com/pragma/RolEnum.java,9\1\91efb7aa036fd6ad8af18338dc0e16aebea7b2a8
-j
-:Apps/generics/src/main/java/com/pragma/EncrypSecurity.java,5\c\5c1a93c32970310d2110485d6a71a01b7d3e9cda
 I
 Apps/gateway/build.gradle,8\2\829eaa40dc1fc57956b1afd38859008264a2dbc1
 J

@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public  enum RolEnum {
+    UNAUTHORIZED("UNAUTHORIZED", -1),
     ADMIN("ADMINISTRADOR", 1),
     OWNER("PROPIETARIO", 2),
     EMPLOYEE("EMPLOYEE", 3),
