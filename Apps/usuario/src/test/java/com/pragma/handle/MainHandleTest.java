@@ -16,8 +16,6 @@ import static org.hamcrest.Matchers.is;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = UsuariosApp.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith({SpringExtension.class})
-//@RunWith(SpringRunner.class)
-//@WebFluxTest(MainHandleTest.class)
 class MainHandleTest {
 
 
@@ -29,7 +27,6 @@ class MainHandleTest {
 
     @Test
     void probando() {
-//        when(useCase.apply(Mockito.any())).thenReturn(Mono.just("test"));
         RestAssured.given()
                 .get("/helpy")
                 .then()

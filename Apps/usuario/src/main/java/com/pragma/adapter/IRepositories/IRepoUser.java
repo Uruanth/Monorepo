@@ -28,7 +28,7 @@ public class IRepoUser implements UserRepo {
     private final String QUERY_SAVE_USER = new StringBuilder()
             .append("INSERT INTO ")
             .append("usuarios (correo, apellido, celular, nombre, clave, id_rol) ")
-            .append("VALUES (?,?,?,?,?,?,?)")
+            .append("VALUES (?,?,?,?,?,?)")
             .toString();
 
     @Override
@@ -39,7 +39,7 @@ public class IRepoUser implements UserRepo {
                 user.getMobile(),
                 user.getName(),
                 user.getPass(),
-                RolEnum.ADMIN.getCode()
+                user.getRol().getId()
         );
 
         UserData saveU = Optional.of(jdbc.query(getQueryUserByEmail(user.getEmail()),
@@ -56,7 +56,7 @@ public class IRepoUser implements UserRepo {
                 .lastName(saveU.getLastName())
                 .mobile(saveU.getMobile())
                 .email(saveU.getEmail())
-                .roles(Collections.emptyList())
+                .rol(getRolById(saveU.getRoles().getId()))
                 .build());
     }
 
@@ -115,5 +115,27 @@ public class IRepoUser implements UserRepo {
         return "select u.id, u.nombre, u.correo, u.apellido, u.celular, u.clave, (\n" +
                 "    SELECT descripcion from roles r where r.id = u.id_rol\n" +
                 "    ) as rol from usuarios u WHERE u.correo = '" + email + "'";
+    }
+
+    private Rol getRolById(Integer id){
+        var rolE = Arrays.stream(RolEnum.values())
+                .filter(rolEnum -> rolEnum.getCode().equals(id))
+                .collect(Collectors.toList());
+
+        if(rolE.isEmpty()){
+            return Rol.builder()
+                    .id(-1)
+                    .description("unauthorized")
+                    .name("unauthorized")
+                    .build();
+        }else {
+            var rol = rolE.get(0);
+        return Rol.builder()
+                .id(rol.getCode())
+                .name(rol.name())
+                .description(rol.name())
+                .build();
+        }
+
     }
 }

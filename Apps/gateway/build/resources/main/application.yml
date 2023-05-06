@@ -1,0 +1,30 @@
+server:
+  port: 5000
+  origin: ${ORIGIN:*}
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+        - id: plazoleta
+          uri: ${PLAZOLETA_URI:http://localhost:8080/}
+          predicates:
+            - Path=/plazoleta/**
+          filters:
+            - RewritePath=/plazoleta/(?<segment>.*), /$\{segment}
+        - id: user
+          uri: ${USER_URI:http://localhost:8081/}
+          predicates:
+            - Path=/usuario/**
+          filters:
+            - RewritePath=/usuario/(?<segment>.*), /$\{segment}
+#            - JWTFilter=RSA256,HS256,RS256
+#            - RemoveResponseHeader=X-Powered-By
+microservice:
+  jdbc:
+    driverClassName: ${DriverClassName:com.mysql.cj.jdbc.Driver}
+    url: ${MYSQL_HOST:jdbc:mysql://localhost:3306/pragma}
+    userName: ${UserSQL:root}
+    password: ${PassSQL:admin}

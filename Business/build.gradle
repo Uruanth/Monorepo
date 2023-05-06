@@ -3,6 +3,7 @@ version '1.0-SNAPSHOT'
 
 dependencies {
     implementation project(':Monorepo-Domain')
+    implementation project(':Apps-generics')
 
     // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
     implementation 'io.projectreactor:reactor-core:3.5.3'

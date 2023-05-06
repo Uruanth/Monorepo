@@ -56,17 +56,19 @@ public class MainHandle {
     }
 
 
-//    @Bean
-//    public RouterFunction<ServerResponse> createUser(CreateOwnerAccountUseCase useCase){
-//        return route(
-//                RequestPredicates.POST("/createOwner")
-//                        .and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
-//                request -> request.bodyToMono(User.class)
-//                        .flatMap(user -> useCase.apply(user))
-//                        .flatMap(user -> ServerResponse.ok()
-//                                .contentType(MediaType.APPLICATION_JSON)
-//                                .bodyValue(user))
-//        );
-//    }
+    @Bean
+    public RouterFunction<ServerResponse> createUser(CreateOwnerAccountUseCase useCase){
+        return route(
+                RequestPredicates.POST("/createOwner")
+                        .and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(User.class)
+                        .flatMap(user -> useCase.apply(user))
+                        .flatMap(user -> ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(user))
+                        .onErrorResume(throwable -> ServerResponse.badRequest()
+                                .bodyValue(throwable.getMessage()))
+        );
+    }
 
 }

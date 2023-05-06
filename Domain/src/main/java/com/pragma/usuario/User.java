@@ -16,6 +16,6 @@ public class User {
     private String email;
     private String pass;
 
-    private List<Rol> roles;
+    private Rol rol;
 
 }
